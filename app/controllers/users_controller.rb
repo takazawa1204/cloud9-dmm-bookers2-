@@ -17,13 +17,16 @@ class UsersController < ApplicationController
   end
 
   def index
+    @user = current_user
     @books = Book.all
     @users = User.all
+    @book = Book.new
 
   end
 
   def edit
     @user = User.find(params[:id])
+    @book = Book.new
   end
 
   def update
